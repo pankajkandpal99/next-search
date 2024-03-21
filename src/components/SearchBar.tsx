@@ -1,6 +1,6 @@
 "use client";
 
-import { Search } from "lucide-react";
+import { Loader2, Search } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useRef, useState, useTransition } from "react";
@@ -29,6 +29,7 @@ export const SearchBar = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="absolute inset-0 h-full"
+          disabled={isSearching}
           onKeyDown={(event) => {
             if (event.key === "Enter") {
               searchHandler();
@@ -42,9 +43,14 @@ export const SearchBar = () => {
 
         <Button
           onClick={searchHandler}
+          disabled={isSearching}
           className="absolute right-0 inset-y-0 h-full rounded-l-none"
         >
-          <Search className="h-6 w-6" />
+          {isSearching ? (
+            <Loader2 className="h-6 w-6 animate-spin" />
+          ) : (
+            <Search className="h-6 w-6" />
+          )}
         </Button>
       </div>
     </div>

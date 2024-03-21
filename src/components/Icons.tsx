@@ -1,7 +1,7 @@
 import type { LucideProps } from "lucide-react"; // isme 'type' keyword ka istemal LucideProps ke naam se ek custom data type ko define karne ke liye kiya gaya hai, jo most likely lucide-react library mein use hone wale icons ke props ko represent karta hai.
 
 export const Icons = {
-  Sparkles: (props: LucideProps) => (
+  Sparkes: (props: LucideProps) => (
     <svg {...props} viewBox="0 0 512.002 512.002">
       <path
         fill="#F9D366"
